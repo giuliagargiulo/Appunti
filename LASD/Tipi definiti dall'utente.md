@@ -1,0 +1,73 @@
+---
+author:
+---
+## Struct
+
+Le struct sono classi con accesso pubblico agli attributi e alle funzioni
+
+```cpp
+struct StructName{
+	// Campi
+};
+```
+
+Ad esempio:
+```cpp
+struct Studente{
+	string Nome;
+	string Cognome;
+	string Matricola;
+	uint id;
+};
+```
+
+L'accesso ai campi di una struct avviene tramite:
+1. la notazione puntata, ad esempio `StructNameVar.Campo`,
+2. tramite l'operatore `->`se si tratta di un puntatore ad una struttura: `PointerVarName -> Campo`, che corrisponde a `(*PointerVarName).Campo`.
+
+Per dichiarare una nuova variabile di tipo Studente posso usare:
+```cpp
+Studente var; // allocazione statica
+Studente * var1 = new Studente; // allocazione dinamica
+var1->Nome = string('Giulia'); // accesso tramite operatore freccia
+```
+
+>[!important] 
+>Poichè l'accesso in memoria avviene a multipli di 32 o 64 bit, in base all'architettura della macchina, è importante l'ordine dei campi della struct, per evitare di sprecare memoria.
+
+---
+## Enumerazione
+
+```cpp
+enum class Name{elemento0,..., elementoN}; //enumerazione alla C++
+enum Name{...}  // enumerazione alla C
+
+//per accedere ai valori di una classe enumerazione:
+Nome :: elementoi
+```
+
+
+```cpp 
+enum class Color{white, gray, black};
+enum Color2{red, yellow, green};
+enum Color3{red, brown}; // ERRORE! In C i nomi sono globali, non limitati all'enumerazione.
+enum class Color4{white, red};
+
+Color colore = Color :: white;
+Color2 colore2 = red;
+
+Color4 colore4 = Color4 :: white; // OK!
+Color4 colore4 = Color :: white // ERRORE!
+```
+
+- Gli enumeratori possono essere confrontati (vengono considerati come interi) tramite gli operatori  `"==", "!=", "<", ">", "<=", ">="`  e assegnati tramite `"="`.
+```cpp
+enum class Color{white, gray, black};
+Color colore = Color :: gray;
+colore < Color :: black    // VERO, restituisce 1
+colore == Color :: white   // FALSO, restituisce 0
+```
+
+- Le variabili enumerative possono avere un valore iniziale di default.
+
+---
