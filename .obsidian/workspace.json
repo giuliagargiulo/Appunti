@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LASD/Classe.md",
+                "file": "ASD/Albero binario di ricerca.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 211.5
   },
   "right": {
     "id": "f43f52b47d9036db",
@@ -85,9 +85,9 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "LASD/Classe.md",
+                "file": "ASD/Albero binario di ricerca.md",
                 "collapseAll": false,
-                "extraContext": false,
+                "extraContext": true,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "LASD/Classe.md",
+                "file": "ASD/Albero binario di ricerca.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,15 +125,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "LASD/Classe.md"
+                "file": "ASD/Albero binario di ricerca.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -147,9 +149,32 @@
   },
   "active": "4b8244aabfd0004a",
   "lastOpenFiles": [
-    "README.md",
+    "Librerie LASD/exercise2/bst/bst.hpp",
+    "Librerie LASD/exercise2/bst/bst.cpp",
+    "Librerie LASD/exercise2/bst",
+    "Librerie LASD/exercise2/exc2af.o",
+    "Librerie LASD/exercise2/main.cpp",
+    "Librerie LASD/exercise2/vector/vector.hpp",
+    "Librerie LASD/exercise2/vector/vector.cpp",
+    "Librerie LASD/exercise2/vector",
+    "Librerie LASD/exercise2/exc1af.o",
+    "Librerie LASD/exercise2/binarytree/vec/binarytreevec.hpp",
+    "Librerie LASD/exercise2/binarytree/vec/binarytreevec.cpp",
+    "ASD/Grafo.md",
     "LASD/Classe.md",
+    "ASD/Albero binario di ricerca.md",
+    "ASD/Albero binario.md",
+    "LASD/Tipi definiti dall'utente.md",
+    "LASD/Eccezioni.md",
     "LASD/Allocazione dinamica della memoria.md",
-    "LASD/Alcune Keywords.md"
+    "LASD/Alcune Keywords.md",
+    "LASD/Generazione pseudo-casuale di numeri.md",
+    "LASD/Libreria string.md",
+    "LASD/Libreria iostream.md",
+    "LASD/Puntatori a funzione.md",
+    "LASD/Template.md",
+    "LASD/Introduzione a C++.md",
+    "LASD/Tipi Fondamentali.md",
+    "README.md"
   ]
 }

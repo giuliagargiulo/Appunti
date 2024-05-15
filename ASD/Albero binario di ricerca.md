@@ -48,8 +48,8 @@ L'elemento minimo in un ABR è contenuto nel nodo più a sinistra senza figli a 
 def Min(T):
 	ret = T
 	if T->sx != NULL:
-		T = T->sx
-	return ret	
+		Min(T->sx)
+	return ret
 ```
 
 ```python
@@ -71,7 +71,7 @@ L'elemento massimo in un ABR è contenuto nel nodo più a destra senza figli a d
 def Max(T):
 	ret = T
 	if T->dx != NULL:
-		T = T->dx
+		Max(T->dx)
 	return ret	
 ```
 

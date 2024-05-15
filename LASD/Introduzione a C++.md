@@ -1,7 +1,6 @@
 ---
 Data: 12/03/2024
 ---
-
 ## Struttura modulare di un programma
 
 ### Un programma semplice 

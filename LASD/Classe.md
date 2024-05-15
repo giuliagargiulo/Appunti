@@ -28,7 +28,7 @@ ClassName(ClassName &&) noexcept; // move constructor
 ```
 ##### Operatori
 ```cpp
-bool operator == (const ClassName &) cout noexcept; // confronto
+bool operator == (const ClassName &) const noexcept; // confronto
 ClassName & operator = (const ClassName &);  // copy assignment
 ClassName & operator = (ClassName &&) noexcept; // move assignment
 ```
@@ -49,3 +49,11 @@ Definizione concreta di un metodo:
 ```cpp
 type ClassName::FunName(parameters)[specifers]{codice}
 ```
+
+### Classe astratta
+Una classe astratta è una classe "stampino" per le classi che ne derivano, ma non possiamo utilizzarla direttamente, cioè non avremo mai oggetti di quella classe.
+In C++ una classe diventa astratta quando aggiungo un metodo virtuale. Ogni classe che eredita da una classe virtuale deve fare l'override dei metodi virtuali.
+
+
+Note:
+Creare una gerarchia senza virtual corrisponde alla visita in post order di un grafo senza colorazione, che quindi costa esponenziale, mentre 
