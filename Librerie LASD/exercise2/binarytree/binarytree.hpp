@@ -202,6 +202,7 @@ public:
   // Specific member functions
 
   // TODO: Controllare se serve const
+  using BinaryTree<Data>::Root;
   virtual MutableNode & Root() = 0; // (concrete function must throw std::length_error when empty)
 
   /* ************************************************************************ */

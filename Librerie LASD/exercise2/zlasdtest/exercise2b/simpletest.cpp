@@ -84,14 +84,14 @@ void stestBSTInt(uint & testnum, uint & testerr) {
     Remove(loctestnum, loctesterr, bst, false, 5);
     Remove(loctestnum, loctesterr, bst, true, 2);
 
-    Exists(loctestnum, loctesterr, bst, false, 5); // test fallito
+    Exists(loctestnum, loctesterr, bst, false, 5);
     Exists(loctestnum, loctesterr, bst, false, 2);
 
     RemoveMax(loctestnum, loctesterr, bst, true);
     Max(loctestnum, loctesterr, bst, true, 6);
 
     TraverseInOrder(loctestnum, loctesterr, bst, true, &TraversePrint<int>);
-
+ 
     Predecessor(loctestnum, loctesterr, bst, true, 4, 3);
     Predecessor(loctestnum, loctesterr, bst, true, 5, 4);
 
