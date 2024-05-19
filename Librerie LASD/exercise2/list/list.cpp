@@ -267,6 +267,9 @@ bool List<Data>::Remove(const Data & element){
 
     if(Empty())
         throw std::length_error("List is empty in function Remove()");
+
+    if(!(Exists(element)))
+        return false;
     
     if(head->val == element){     // se l'elemento da eliminare è in testa
         RemoveFromFront();
@@ -281,13 +284,14 @@ bool List<Data>::Remove(const Data & element){
     Node * tmp = head;
     Node * prev = nullptr;
 
-    while(tmp->val != element){
+    while(tmp!= nullptr && tmp->val != element){
         prev = tmp;
         tmp = tmp->next;
     }
 
     if (tmp != nullptr){
-        prev->next = tmp->next;     // aggiorno i puntatori
+        prev->next = tmp->next;   // aggiorno i puntatori
+        tmp->next = nullptr;  
         delete tmp;                 // elimino il nodo
         size--;
         return true;

@@ -51,8 +51,7 @@ public:
 /* ************************************************************************** */
 
 template <typename Data>
-class MutableIterator {
-  // Must extend Iterator<Data>
+class MutableIterator: virtual public Iterator<Data>{
 
 private:
 
@@ -165,7 +164,7 @@ public:
 
   // Specific member functions
 
-  virtual void Reset() noexcept = 0;// type Reset() specifiers; // (concrete function should not throw exceptions)
+  virtual void Reset() noexcept = 0; // (concrete function should not throw exceptions)
 
 };
 

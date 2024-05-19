@@ -17,7 +17,6 @@ class BinaryTreeLnk : virtual public MutableBinaryTree<Data> {
 
 private:
 
-  // ...
 
 protected:
 
@@ -25,7 +24,6 @@ protected:
 
   using Container::size;
 
-  // ...
 
   struct NodeLnk : public virtual MutableBinaryTree<Data>::MutableNode { // serve public?? 
   

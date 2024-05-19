@@ -111,7 +111,7 @@ BinaryTreeVec<Data>::BinaryTreeVec(const TraversableContainer<Data> & trav_conta
 
 // A binary tree obtained from a MappableContainer
 template <typename Data>
-BinaryTreeVec<Data>::BinaryTreeVec(MappableContainer<Data> && map_container): vecNodes(map_container.Size()){
+BinaryTreeVec<Data>::BinaryTreeVec(MappableContainer<Data> && map_container) : vecNodes(map_container.Size()) {
     ulong i = 0;
     map_container.Map([this, &i](Data & elem){
         this->vecNodes[i] = new NodeVec(std::move(elem), i, this);

@@ -167,7 +167,7 @@ BinaryTreeLnk<Data> & BinaryTreeLnk<Data>::operator = (BinaryTreeLnk<Data> && ot
 // Specific member functions (inherited from BinaryTree)
 template <typename Data>
 const typename BinaryTreeLnk<Data>::NodeLnk & BinaryTreeLnk<Data>::Root() const {
-    if(size == 0)
+    if(root == nullptr)
         throw std::length_error("Empty tree in function Root()");
     return *root;
 }
@@ -175,7 +175,7 @@ const typename BinaryTreeLnk<Data>::NodeLnk & BinaryTreeLnk<Data>::Root() const 
 // Specific member function (inherited from MutableBinaryTree)
 template <typename Data>
 typename BinaryTreeLnk<Data>::NodeLnk & BinaryTreeLnk<Data>::Root(){
-    if(size == 0)
+    if(root == nullptr)
         throw std::length_error("Empty tree in function Root()");
     return *root;
 }

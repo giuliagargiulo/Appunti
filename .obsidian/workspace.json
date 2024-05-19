@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ASD/Albero binario di ricerca.md",
+                "file": "LASD/Eccezioni.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ASD/Albero binario di ricerca.md",
+                "file": "LASD/Eccezioni.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ASD/Albero binario di ricerca.md",
+                "file": "LASD/Eccezioni.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ASD/Albero binario di ricerca.md"
+                "file": "LASD/Eccezioni.md"
               }
             }
           }
@@ -149,20 +149,20 @@
   },
   "active": "4b8244aabfd0004a",
   "lastOpenFiles": [
+    "Librerie LASD/exercise2/bst/bst.hpp",
+    "Librerie LASD/exercise2/bst/bst.cpp",
+    "Librerie LASD/exercise2/bst",
     "Librerie LASD/exercise2/exc2af.o",
+    "Librerie LASD/exercise2/main.cpp",
+    "Librerie LASD/exercise2/vector/vector.hpp",
+    "Librerie LASD/exercise2/vector/vector.cpp",
+    "Librerie LASD/exercise2/vector",
     "Librerie LASD/exercise2/exc1af.o",
-    "Librerie LASD/exercise2/main",
-    "Librerie LASD/exercise2/exc1as.o",
-    "Librerie LASD/exercise2/exc2as.o",
-    "Librerie LASD/exercise2/exc1bs.o",
-    "Librerie LASD/exercise2/exc2bs.o",
-    "Librerie LASD/exercise2/mytest.o",
-    "Librerie LASD/exercise2/test.o",
-    "Librerie LASD/exercise2/container.o",
-    "Librerie LASD/exercise2/exc2bf.o",
+    "Librerie LASD/exercise2/binarytree/vec/binarytreevec.hpp",
+    "Librerie LASD/exercise2/binarytree/vec/binarytreevec.cpp",
+    "ASD/Albero binario di ricerca.md",
     "ASD/Grafo.md",
     "LASD/Classe.md",
-    "ASD/Albero binario di ricerca.md",
     "ASD/Albero binario.md",
     "LASD/Tipi definiti dall'utente.md",
     "LASD/Eccezioni.md",
