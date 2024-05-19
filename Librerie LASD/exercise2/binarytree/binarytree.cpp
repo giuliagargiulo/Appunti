@@ -391,9 +391,10 @@ Data& BTPostOrderMutableIterator<Data>::operator*(){
 
 template <typename Data>
 BTInOrderIterator<Data>::BTInOrderIterator(const BinaryTree<Data> & bt){
-    if(!bt.Empty())
+    if(!bt.Empty()){
         root = current = &bt.Root();
         current = FindDeepestLeftInOrder(root);
+    }
 }
 
 //FindDeepestLeftInOrder()

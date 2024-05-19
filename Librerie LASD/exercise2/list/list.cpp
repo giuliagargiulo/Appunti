@@ -179,22 +179,21 @@ void List<Data>::RemoveFromBack(){
         throw std::length_error("List is empty in function RemoveFromBack()");
 
     Node * tmp = head;
-    Node * prev = nullptr;
 
     if(head == tail){      // se la lista contine un solo elemento
         RemoveFromFront();
+        head = tail = nullptr;
         return;
     }
 
-    while(tmp->next != nullptr){   // scorro la lista fino all'ultimo elemento
-        prev = tmp;
+    while(tmp->next != tail)   // scorro la lista fino all'ultimo elemento
         tmp = tmp->next;
-    }
-
-    prev->next = nullptr;
-    tail = prev;
-    delete tmp;
+    
+    delete tail;
+    tail = tmp;
+    tail->next = nullptr;
     size--;
+
 }
 
 // InsertAtBack() copy of the value
@@ -209,7 +208,6 @@ template <typename Data>
         tail = tmp;
     }
     size++;
-    
 }
 
 // InsertAtBack() move of the value
@@ -261,16 +259,13 @@ bool List<Data>::Insert(Data && new_element){
     return false;
 }
 
-// bool Remove() 
+//bool Remove() 
 template <typename Data>
 bool List<Data>::Remove(const Data & element){
 
     if(Empty())
         throw std::length_error("List is empty in function Remove()");
 
-    if(!(Exists(element)))
-        return false;
-    
     if(head->val == element){     // se l'elemento da eliminare è in testa
         RemoveFromFront();
         return true;
@@ -281,10 +276,10 @@ bool List<Data>::Remove(const Data & element){
         return true;
     }
 
-    Node * tmp = head;
-    Node * prev = nullptr;
+    Node * tmp = head->next;
+    Node * prev = head;
 
-    while(tmp!= nullptr && tmp->val != element){
+    while(tmp != nullptr && tmp->val != element){
         prev = tmp;
         tmp = tmp->next;
     }

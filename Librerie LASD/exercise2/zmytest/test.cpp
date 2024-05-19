@@ -773,6 +773,8 @@ bool ListFunctionsTest(){
   else{
     cout << "Error!" << endl; TestPassed &= false; errors++;
   }
+  for(uint i = 0; i< list7.Size(); i++) cout<< list7[i] << " ";
+  cout<< endl;
 
   cout << "("<< ++numTest<< ")"<<  " Test Remove(): ";
   list7.Remove(9);
@@ -781,6 +783,8 @@ bool ListFunctionsTest(){
   else{
     cout << "Error!" << endl; TestPassed &= false; errors++;
   }
+  for(uint i = 0; i< list7.Size(); i++) cout<< list7[i] << " ";
+  cout<< endl;
 
   cout << "("<< ++numTest<< ")"<<  " Test Remove(): ";
   list7.Remove(6);
@@ -789,6 +793,8 @@ bool ListFunctionsTest(){
   else{
     cout << "Error!" << endl; TestPassed &= false; errors++;
   }
+  for(uint i = 0; i< list7.Size(); i++) cout<< list7[i] << " ";
+  cout<< endl;
 
   cout << "("<< ++numTest<< ")"<<  " Test Remove(): ";
   list7.Remove(8);
@@ -797,6 +803,8 @@ bool ListFunctionsTest(){
   else{
     cout << "Error!" << endl; TestPassed &= false; errors++;
   }
+  for(uint i = 0; i< list7.Size(); i++) cout<< list7[i] << " ";
+  cout<< endl;
 
   cout << "("<< ++numTest<< ")"<<  " Test Remove(): ";
   list7.Remove(7);
@@ -805,6 +813,8 @@ bool ListFunctionsTest(){
   else{
     cout << "Error!" << endl; TestPassed &= false; errors++;
   }
+  for(uint i = 0; i< list7.Size(); i++) cout<< list7[i] << " ";
+  cout<< endl;
 
   cout << "("<< ++numTest<< ")"<<  " Test Remove(): ";
   bool test = list7.Remove(6);
@@ -813,6 +823,8 @@ bool ListFunctionsTest(){
   else{
     cout << "Error!" << endl; TestPassed &= false; errors++;
   }
+  for(uint i = 0; i< list7.Size(); i++) cout<< list7[i] << " ";
+  cout<< endl;
 
   cout << "("<< ++numTest<< ")"<<  " Test Remove(): ";
   test = list7.Remove(0);
@@ -821,6 +833,8 @@ bool ListFunctionsTest(){
   else{
     cout << "Error!" << endl; TestPassed &= false; errors++;
   }
+  for(uint i = 0; i< list7.Size(); i++) cout<< list7[i] << " ";
+  cout<< endl;
 
   cout << "("<< ++numTest<< ")"<<  " Test Remove(): ";
   lasd::List<int> list8;
@@ -872,6 +886,7 @@ bool ListFunctionsTest(){
   else{
     cout << "Error!" << endl; TestPassed &= false; errors++;
   }
+  
 
   cout << "END OF LIST FUNCTIONS TEST: ("<< errors << "/" << numTest  << ") " ;
   return TestPassed;
@@ -1211,17 +1226,29 @@ bool TestBinaryTreeVec(){
   //Root()
   cout<<"("<< ++numTest<< ")"<< " Test Root() BinaryTreeVec<int>: ";
   lasd::List<int> list2;
-  for(ulong i=0; i<dim; i++) list2.InsertAtBack(i);
+  lasd::BinaryTreeLnk<int> btvec13;
+  btvec13 = list2;
+  try{
+    btvec13.Root();
+  } catch (std::length_error){
+    cout<<"length_error: btvec is Empty, does not have root: Correct!"<<endl; 
+  } catch (std::exception) {
+    cout<<"Wrong exception called: Error!"<<endl; 
+    TestPassed &= false;    
+  }
+
+  //Root()
+  cout<<"("<< ++numTest<< ")"<< " Test Root() BinaryTreeVec<int>: ";
+  lasd::List<int> list3;
+  for(ulong i=0; i<dim; i++) list3.InsertAtBack(i);
   lasd::BinaryTreeVec<int> btvec12;
-  btvec12 = list2;
+  btvec12 = list3;
 
   if(btvec12.Root().Element() == 0)
-    cout << "Correct!" << endl;
+    cout << "Root is " << btvec12.Root().Element() << ", Correct!" << endl;
   else{
     cout << "Error!" << endl; errors++; TestPassed &= false;
   }
-
-  
 
   cout << "END OF BINARY TREE VEC TEST: ("<< errors << "/" << numTest  << ") " ;
   return TestPassed;
