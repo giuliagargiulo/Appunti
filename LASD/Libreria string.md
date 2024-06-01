@@ -51,7 +51,7 @@ cout << var.substr(1,2); // OUTPUT = "la"
 ```
 
 >[!attention] 
->La funzione substr() può generare l'eccezione "Out of range".
+>La funzione substr() può generare l'eccezione `out_of_range`.
 
 ---
  

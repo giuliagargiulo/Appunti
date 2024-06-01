@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LASD/Eccezioni.md",
+                "file": "LASD/Tipi definiti dall'utente.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 211.5
+    "width": 211.5,
+    "collapsed": true
   },
   "right": {
     "id": "f43f52b47d9036db",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "LASD/Eccezioni.md",
+                "file": "LASD/Tipi definiti dall'utente.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "LASD/Eccezioni.md",
+                "file": "LASD/Tipi definiti dall'utente.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "LASD/Eccezioni.md"
+                "file": "LASD/Tipi definiti dall'utente.md"
               }
             }
           }
@@ -149,31 +150,31 @@
   },
   "active": "4b8244aabfd0004a",
   "lastOpenFiles": [
-    "Librerie LASD/exercise2/bst/bst.hpp",
-    "Librerie LASD/exercise2/bst/bst.cpp",
-    "Librerie LASD/exercise2/bst",
-    "Librerie LASD/exercise2/exc2af.o",
-    "Librerie LASD/exercise2/main.cpp",
-    "Librerie LASD/exercise2/vector/vector.hpp",
-    "Librerie LASD/exercise2/vector/vector.cpp",
-    "Librerie LASD/exercise2/vector",
-    "Librerie LASD/exercise2/exc1af.o",
-    "Librerie LASD/exercise2/binarytree/vec/binarytreevec.hpp",
-    "Librerie LASD/exercise2/binarytree/vec/binarytreevec.cpp",
-    "ASD/Albero binario di ricerca.md",
-    "ASD/Grafo.md",
-    "LASD/Classe.md",
-    "ASD/Albero binario.md",
-    "LASD/Tipi definiti dall'utente.md",
+    "Librerie LASD/exercise3/bst/bst.hpp",
+    "Librerie LASD/exercise3/bst/bst.cpp",
+    "Librerie LASD/exercise3/bst",
+    "Librerie LASD/exercise3/exc2af.o",
+    "Librerie LASD/exercise3/main.cpp",
+    "Librerie LASD/exercise3/vector/vector.hpp",
+    "Librerie LASD/exercise3/vector/vector.cpp",
+    "Librerie LASD/exercise3/vector",
+    "Librerie LASD/exercise3/exc1af.o",
+    "Librerie LASD/exercise3/binarytree/lnk/binarytreelnk.hpp",
+    "Librerie LASD/exercise3/binarytree/vec/binarytreevec.hpp",
+    "LASD/Libreria string.md",
+    "LASD/Puntatori a funzione.md",
+    "LASD/Libreria iostream.md",
+    "LASD/Introduzione a C++.md",
     "LASD/Eccezioni.md",
+    "LASD/Generazione pseudo-casuale di numeri.md",
+    "LASD/Classe.md",
     "LASD/Allocazione dinamica della memoria.md",
     "LASD/Alcune Keywords.md",
-    "LASD/Generazione pseudo-casuale di numeri.md",
-    "LASD/Libreria string.md",
-    "LASD/Libreria iostream.md",
-    "LASD/Puntatori a funzione.md",
+    "ASD/Albero binario di ricerca.md",
+    "ASD/Grafo.md",
+    "ASD/Albero binario.md",
+    "LASD/Tipi definiti dall'utente.md",
     "LASD/Template.md",
-    "LASD/Introduzione a C++.md",
     "LASD/Tipi Fondamentali.md",
     "README.md"
   ]
