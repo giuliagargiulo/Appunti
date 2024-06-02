@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LASD/Tipi definiti dall'utente.md",
+                "file": "ASD/Albero binario di ricerca.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "LASD/Tipi definiti dall'utente.md",
+                "file": "ASD/Albero binario di ricerca.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "LASD/Tipi definiti dall'utente.md",
+                "file": "ASD/Albero binario di ricerca.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "LASD/Tipi definiti dall'utente.md"
+                "file": "ASD/Albero binario di ricerca.md"
               }
             }
           }
@@ -150,6 +150,8 @@
   },
   "active": "4b8244aabfd0004a",
   "lastOpenFiles": [
+    "LASD/Libreria string.md",
+    "LASD/Tipi definiti dall'utente.md",
     "Librerie LASD/exercise3/bst/bst.hpp",
     "Librerie LASD/exercise3/bst/bst.cpp",
     "Librerie LASD/exercise3/bst",
@@ -160,8 +162,6 @@
     "Librerie LASD/exercise3/vector",
     "Librerie LASD/exercise3/exc1af.o",
     "Librerie LASD/exercise3/binarytree/lnk/binarytreelnk.hpp",
-    "Librerie LASD/exercise3/binarytree/vec/binarytreevec.hpp",
-    "LASD/Libreria string.md",
     "LASD/Puntatori a funzione.md",
     "LASD/Libreria iostream.md",
     "LASD/Introduzione a C++.md",
@@ -173,7 +173,6 @@
     "ASD/Albero binario di ricerca.md",
     "ASD/Grafo.md",
     "ASD/Albero binario.md",
-    "LASD/Tipi definiti dall'utente.md",
     "LASD/Template.md",
     "LASD/Tipi Fondamentali.md",
     "README.md"

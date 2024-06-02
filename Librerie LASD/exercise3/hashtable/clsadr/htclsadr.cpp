@@ -143,7 +143,7 @@ bool HashTableClsAdr<Data>::Remove(const Data & val){
     ulong index = this->HashKey(Hashable<Data>()(val));
     if(table[index].List<Data>::Remove(val)){
         size--;
-        if(size<(tableSize/5) && tableSize != HASH_TABLE_SIZE)
+        if(size<(tableSize/5) && tableSize != 16)
             Resize(tableSize/2);
         return true;
     }
@@ -162,7 +162,7 @@ template <typename Data>
 void HashTableClsAdr<Data>::Resize(const ulong newsize){
     if(newsize == 0){
         Clear();
-        Resize(HASH_TABLE_SIZE);
+        Resize(16);
         return;
     }
     ulong tmpSize = NextPow(newsize);

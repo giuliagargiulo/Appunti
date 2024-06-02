@@ -208,116 +208,48 @@ const Data & BST<Data>::Predecessor(const Data & elem) const{
     //if(!Exists(elem))
     //    throw std::length_error("Element not found in function Predecessor()");
 
-    const typename BST<Data>::NodeLnk * pred = FindPointerToPredecessor(root, elem);
-    if(pred == nullptr)
+    const typename BST<Data>::NodeLnk * const * pred = &FindPointerToPredecessor(root, elem);
+    if(pred != nullptr)
+        return (*pred)->element;
+    else
         throw std::length_error("No predecessor found in function Predecessor()");
-    return pred->element;
 }
 
-//template <typename Data>
-//const typename BST<Data>::NodeLnk* const & BST<Data>::FindPointerToPredecessor(const typename BST<Data>::NodeLnk * const & node, const Data & elem) const noexcept{
-//    const typename BST<Data>::NodeLnk * const * ret = &node;
-//    if(node != nullptr){
-//        if(node->element == elem)
-//            ret = &FindPointerToMax(node->left);
-//        else if(node->element < elem){
-//            ret = &FindPointerToPredecessor(node->right, elem);
-//            if(*ret == nullptr)
-//                ret = &node;
-//        }
-//        else
-//            ret = &FindPointerToPredecessor(node->left, elem);
-//    }
-//    return *ret;
-//}
-
-//template <typename Data>
-//typename BST<Data>::NodeLnk*& BST<Data>::FindPointerToPredecessor(typename BST<Data>::NodeLnk *& node, const Data & elem)  noexcept{
-//    typename BST<Data>::NodeLnk * const * ret = &node;
-//    if(node != nullptr){
-//        if(node->element == elem)
-//            ret = &FindPointerToMax(node->left);
-//        else if(node->element < elem){
-//            ret = &FindPointerToPredecessor(node->right, elem);
-//            if(*ret == nullptr)
-//                ret = &node;
-//        }
-//        else
-//            ret = &FindPointerToPredecessor(node->left, elem);
-//    }
-//    return *ret;
-//}
-//
-
-
-template <typename Data>
-const typename BST<Data>::NodeLnk* const & BST<Data>::FindPointerToPredecessor(const typename BST<Data>::NodeLnk * const & node, const Data & elem) const noexcept {
-    const typename BST<Data>::NodeLnk * const * ret = &node;
-    if (node != nullptr) {
-        if (node->element == elem) {
-            // Se il nodo ha un sottoalbero sinistro, il predecessore è il massimo di quel sottoalbero
-            if (node->left != nullptr){
-                ret = &FindPointerToMax(node->left);
-            } else {
-                // Se il nodo non ha un sottoalbero sinistro, risalgo l'albero per trovare il predecessore
-                const typename BST<Data>::NodeLnk* current = node;
-                const typename BST<Data>::NodeLnk* parent = nullptr;
-                while (current != nullptr) {
-                    if (elem > current->element) {
-                        // Se l'elemento è maggiore, potrebbe essere il predecessore
-                        parent = current;
-                        current = current->right;
-                    } else {
-                        // Se l'elemento è minore o uguale, vai al sottoalbero sinistro
-                        current = current->left;
-                    }
-                }
-                ret = &parent;
-            }
-        } else if (node->element < elem) {
-            ret = &FindPointerToPredecessor(node->right, elem);
-            if (*ret == nullptr)
-                ret = &node;
-        } else {
-            ret = &FindPointerToPredecessor(node->left, elem);
-        }
+template<typename Data>
+const typename BST<Data>::NodeLnk* const& BST<Data>::FindPointerToPredecessor(const NodeLnk* const & node, const Data & val) const noexcept {
+  const NodeLnk * const * ret = nullptr;
+  const NodeLnk * const * current = &node;
+  while ((*current) != nullptr && (*current)->element != val) {
+    if ((*current)->element > val) {
+      current = &(*current)->left;
     }
-    return *ret;
+    else if ((*current)->element < val) {
+      ret = current;
+      current = &(*current)->right;
+    }
+  }
+  if ((*current) != nullptr && (*current)->left!= nullptr)
+    ret = &FindPointerToMax((*current)->left);
+  return *ret;
 }
 
-template <typename Data>
-typename BST<Data>::NodeLnk*& BST<Data>::FindPointerToPredecessor(typename BST<Data>::NodeLnk *& node, const Data & elem) noexcept {
-    typename BST<Data>::NodeLnk ** ret = &node;
-    if (node != nullptr) {
-        if (node->element == elem) {
-            // Se il nodo ha un sottoalbero sinistro, il predecessore è il massimo di quel sottoalbero
-            if (node->left != nullptr){
-                ret = &FindPointerToMax(node->left);
-            } else {
-                // Se il nodo non ha un sottoalbero sinistro, risalgo l'albero per trovare il predecessore
-                const typename BST<Data>::NodeLnk* current = node;
-                const typename BST<Data>::NodeLnk* parent = nullptr;
-                while (current != nullptr) {
-                    if (elem > current->element) {
-                        // Se l'elemento è maggiore, potrebbe essere il predecessore
-                        parent = current;
-                        current = current->right;
-                    } else {
-                        // Se l'elemento è minore o uguale, vai al sottoalbero sinistro
-                        current = current->left;
-                    }
-                }
-                ret = &parent;
-            }
-        } else if (node->element < elem) {
-            ret = &FindPointerToPredecessor(node->right, elem);
-            if (*ret == nullptr)
-                ret = &node;
-        } else {
-            ret = &FindPointerToPredecessor(node->left, elem);
-        }
+
+template<typename Data>
+typename BST<Data>::NodeLnk* & BST<Data>::FindPointerToPredecessor( NodeLnk*  & node, const Data & val)  noexcept {
+   NodeLnk ** ret = nullptr;
+   NodeLnk ** current = &node;
+  while ((*current) != nullptr && (*current)->element != val) {
+    if ((*current)->element > val) {
+      current = &(*current)->left;
     }
-    return *ret;
+    else if ((*current)->element < val) {
+      ret = current;
+      current = &(*current)->right;
+    }
+  }
+  if ((*current) != nullptr && (*current)->left!= nullptr)
+    ret = &FindPointerToMax((*current)->left);
+  return *ret;
 }
 
 
@@ -343,10 +275,12 @@ const Data & BST<Data>::Successor(const Data & elem) const{
     //if(!(Exists(elem)))
     //    throw std::length_error("Element not found in function Successor()");
 
-    const NodeLnk * succ = FindPointerToSuccessor(root, elem);
-    if(succ == nullptr)
+    const NodeLnk * const * succ = &FindPointerToSuccessor(root, elem);
+    if(succ != nullptr)
+        return (*succ)->element;
+    else
         throw std::length_error("No successor found in function Successor()");
-    return succ->element;
+    
 }
 
 template <typename Data>
@@ -368,7 +302,7 @@ const typename BST<Data>::NodeLnk* const & BST<Data>::FindPointerToSuccessor(con
 
 template <typename Data>
 typename BST<Data>::NodeLnk* & BST<Data>::FindPointerToSuccessor(typename BST<Data>::NodeLnk *& node, const Data & elem) noexcept{
-    typename BST<Data>::NodeLnk ** ret = nullptr;
+    typename BST<Data>::NodeLnk ** ret = &node;
     if (node != nullptr){
         if (node->element == elem)
             ret = &FindPointerToMin(node->right);

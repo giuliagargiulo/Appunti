@@ -263,33 +263,35 @@ bool List<Data>::Insert(Data && new_element){
 template <typename Data>
 bool List<Data>::Remove(const Data & element){
 
-    if(Empty())
-        throw std::length_error("List is empty in function Remove()");
+    if(Exists(element)){
+   
+        if(Empty())
+            throw std::length_error("List is empty in function Remove()");
 
-    if(head->val == element){     // se l'elemento da eliminare è in testa
-        RemoveFromFront();
-        return true;
-    }
-    
-    if (tail->val == element){   // se l'elemento da eliminare è in coda
-        RemoveFromBack();
-        return true;
-    }
+        if(head->val == element){     // se l'elemento da eliminare è in testa
+            RemoveFromFront();
+            return true;
+        }
+        
+        if (tail->val == element){   // se l'elemento da eliminare è in coda
+            RemoveFromBack();
+            return true;
+        }
 
-    Node * tmp = head->next;
-    Node * prev = head;
+        Node * tmp = head->next;
+        Node * prev = head;
 
-    while(tmp != nullptr && tmp->val != element){
-        prev = tmp;
-        tmp = tmp->next;
-    }
+        while(tmp != nullptr && tmp->val != element){
+            prev = tmp;
+            tmp = tmp->next;
+        }
 
-    if (tmp != nullptr){
         prev->next = tmp->next;   // aggiorno i puntatori
         tmp->next = nullptr;  
         delete tmp;                 // elimino il nodo
         size--;
         return true;
+        
     }
     return false;
 }

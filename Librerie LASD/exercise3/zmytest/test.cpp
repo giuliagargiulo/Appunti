@@ -595,6 +595,41 @@ bool ListFunctionsTest(){
     cout << "Error!" << endl; TestPassed &= false; errors++;
   }
 
+  cout << "("<< ++numTest<< ")"<<  " Test Insert(): ";
+  lasd::List<int> list1;
+  for(ulong i=0; i<dim-3; i++) list1.Insert(i);
+  list1.Insert(5);
+  list1.Insert(6);
+  list1.Insert(66);
+  for(ulong i = 0; i<list1.Size(); i++) cout<< list1[i] << " ";
+
+  if(list1.Size() == dim-2)
+    cout << "Correct!" << endl;
+  else{
+    cout << "Error!" << endl; TestPassed &= false; errors++;
+  }
+
+  cout << "("<< ++numTest<< ")"<<  " Test Exists(): ";
+  if(list1.Exists(5) && list1.Exists(6) && list1.Exists(66))
+    cout << "Correct!" << endl;
+  else{
+    cout << "Error!" << endl; TestPassed &= false; errors++;
+  }
+
+  cout << "("<< ++numTest<< ")"<<  " Test Exists(): ";
+  if(list1.Exists(0) && list1.Exists(1) && list1.Exists(2))
+    cout << "Correct!" << endl;
+  else{
+    cout << "Error!" << endl; TestPassed &= false; errors++;
+  }
+
+  cout << "("<< ++numTest<< ")"<<  " Test Exists(): ";
+  if(!list1.Exists(10) && !list1.Exists(55))
+    cout << "Correct!" << endl;
+  else{
+    cout << "Error!" << endl; TestPassed &= false; errors++;
+  }
+  
   cout << "("<< ++numTest<< ")"<<  " Test Front(): ";
   lasd::List<int> list2;
   for(ulong i=0; i<dim; i++) list2.InsertAtBack(RandomNumber(gen));
@@ -1002,10 +1037,10 @@ bool TestBinaryTreeLink(){
   btlnk8 = list2;
   try{
     btlnk8.Root();
-  } catch (std::length_error) {
-    cout<<"length_error: btlnk is Empty, does not have root: Correct!"<<endl; 
-  } catch (std::exception) {
-    cout<<"Wrong exception called: Error!"<<endl; 
+  } catch (const std::length_error & exp) {
+    cout<< exp.what() << " ,Correct!" <<endl; 
+  } catch (const std::exception & exp) {
+    cout<< exp.what() << "Wrong exeption called, Error!" <<endl; 
     TestPassed &= false; errors++;
   }
 
@@ -1028,10 +1063,10 @@ bool TestBinaryTreeLink(){
   if(btlnk8 == btlnk9 && btlnk8.Empty()){
     try{
       btlnk8.Root();
-    } catch (std::length_error) {
-      cout<<"length_error: btlnk is Empty, does not have root: Correct!"<<endl; 
-    } catch (std::exception) {
-      cout<<"Wrong exception called: Error!"<<endl; 
+    } catch (const std::length_error & exp) {
+      cout<< exp.what() << " ,Correct!"<< endl; 
+    } catch (const std::exception & exp) {
+      cout<< exp.what() << "Wrong exeption called, Error!"<<endl; 
       TestPassed &= false; errors++;
     }
   }
@@ -1039,7 +1074,6 @@ bool TestBinaryTreeLink(){
       cout << "Error!" << endl; errors++; TestPassed &= false;
   }
 
-  
   cout << "END OF BINARY TREE LINK TEST: ("<< errors << "/" << numTest  << ") " ;
   return TestPassed;
 }
@@ -1161,10 +1195,10 @@ bool TestBinaryTreeVec(){
   btvec13 = list2;
   try{
     btvec13.Root();
-  } catch (std::length_error){
-    cout<<"length_error: btvec is Empty, does not have root: Correct!"<<endl; 
-  } catch (std::exception) {
-    cout<<"Wrong exception called: Error!"<<endl; 
+  } catch (const std::length_error & exp){
+    cout<< exp.what() << ", Correct! "<< endl; 
+  } catch (const std::exception & exp) {
+    cout<< exp.what()<< "Wrong exception called: Error!"<<endl; 
     TestPassed &= false;    
   }
 
@@ -1414,6 +1448,59 @@ lasd::BST<int>bst11(std::move(btvec));
     cout<< "Error!"<< endl; errors++; TestPassed &= false;
   }
 
+  cout<<"("<< ++numTest<< ")"<< " Test Predecessor() BST<int>: ";
+  lasd::BST<int> bst16;
+  bst16.Insert(5);
+  bst16.Insert(3);
+  bst16.Insert(7);
+  bst16.Insert(4);
+  bst16.Insert(11);
+  bst16.Insert(18);
+  bst16.Insert(6);
+  bst16.Insert(9);
+  bst16.Insert(14);
+  bst16.Insert(1);
+
+  cout<< "Predecessor of 5 is "<< bst16.Predecessor(5)<<endl;
+  if(bst16.Predecessor(5) == 4)
+    cout << "Predecessor of 5 is 4, Correct!"<<endl;
+  else{
+    cout<< "Error!"<< endl; errors++; TestPassed &= false;
+  }
+
+  cout<<"("<< ++numTest<< ")"<< " Test Predecessor() BST<int>: ";
+  if(bst16.Predecessor(3) == 1)
+    cout << "Predecessor of 3 is 1, Correct!"<<endl;
+  else{
+    cout<< "Error!"<< endl; errors++; TestPassed &= false;
+  }
+
+  cout<< "Predecessor of 7 is "<< bst16.Predecessor(7)<<endl;
+
+  cout<<"("<< ++numTest<< ")"<< " Test Predecessor() BST<int>: ";
+  if(bst16.Predecessor(7) == 6)
+    cout << "Predecessor of 7 is 6, Correct!"<<endl;
+  else{
+    cout<< "Error!"<< endl; errors++; TestPassed &= false;
+  }
+
+    cout<< "Predecessor of 14 is "<< bst16.Predecessor(14)<<endl;
+
+  cout<<"("<< ++numTest<< ")"<< " Test Predecessor() BST<int>: ";
+  if(bst16.Predecessor(14) == 11)
+    cout << "Predecessor of 4 is 3, Correct!"<<endl;
+  else{
+    cout<< "Error!"<< endl; errors++; TestPassed &= false;
+  }
+
+  cout<<"("<< ++numTest<< ")"<< " Test Predecessor() BST<int>: ";
+  if(bst16.Predecessor(18) == 14)
+    cout << "Predecessor of 18 is 14, Correct!"<<endl;
+  else{
+    cout<< "Error!"<< endl; errors++; TestPassed &= false;
+  }
+
+  
 
   cout<<"("<< ++numTest<< ")"<< " Test PredecessorNRemove() BST<int>: ";
   lasd::BST<int> bst14(list4);
@@ -1425,6 +1512,8 @@ lasd::BST<int>bst11(std::move(btvec));
   else{
       cout<< "Error!"<< endl; errors++; TestPassed &= false;
   }
+
+
   
 
   lasd::BST<int> bst15;
@@ -1525,7 +1614,6 @@ lasd::BST<int>bst11(std::move(btvec));
   else{
     cout<< "Error!"<< endl; errors++; TestPassed &= false;
   }
-
 
   cout << "END OF BST<int> TEST: ("<< errors << "/" << numTest  << ") " ;
   return TestPassed;

@@ -176,6 +176,17 @@ void HashTableOpnAdr<Data>::Resize(const ulong newSize) {
   delete[] newFlags;
 }
 
+template <typename Data>
+void HashTableOpnAdr<Data>::Clear() noexcept {
+    for(ulong i=0; i<tableSize; i++){
+        if(flags[i] == occupied)
+            deletedElem++;
+        flags[i] = deleted;
+    }
+    size=0;
+    if(deletedElem>(tableSize/4))
+        Resize(tableSize); 
+}
 
 /* ************************************************************************** */
 
@@ -216,7 +227,7 @@ bool HashTableOpnAdr<Data>::Find(ulong & index, ulong & probing, const Data & ke
         }
         tmpIndex = QuadraticProbing(++probing, key);
         jumps++;
-    }while(!flags[tmpIndex] == empty);
+    }while(flags[tmpIndex] != empty);
     return false;
 }
 

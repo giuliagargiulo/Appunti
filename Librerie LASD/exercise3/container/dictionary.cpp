@@ -1,4 +1,5 @@
 
+
 namespace lasd {
 
 /* ************************************************************************** */
@@ -11,7 +12,7 @@ bool DictionaryContainer<Data>::InsertAll(const TraversableContainer<Data> & con
 
   container.Traverse(
     [this, &all_inserted](const Data& val){
-        all_inserted = all_inserted && (*this).Insert(val);
+        all_inserted &= Insert(val);
         }
     ); 
   return all_inserted;
@@ -19,12 +20,12 @@ bool DictionaryContainer<Data>::InsertAll(const TraversableContainer<Data> & con
 
 //InsertAll move of the value
 template <typename Data>
-bool DictionaryContainer<Data>::InsertAll(TraversableContainer<Data> && container){
+bool DictionaryContainer<Data>::InsertAll(MappableContainer<Data> && container){
   bool all_inserted = true;
 
   container.Traverse(
-    [this, &all_inserted](const Data& val){
-        all_inserted = all_inserted && (*this).Insert(std::move(val));
+    [this, &all_inserted](Data & val){
+        all_inserted &= Insert(std::move(val));
         }
     ); 
   return all_inserted;
@@ -37,7 +38,7 @@ bool DictionaryContainer<Data>::RemoveAll(const TraversableContainer<Data> & con
 
   container.Traverse(
     [this, &all_removed](const Data& val){
-        all_removed = all_removed && (*this).Remove(val);
+        all_removed &= Remove(val);
         }
     ); 
   return all_removed;
@@ -50,7 +51,7 @@ bool DictionaryContainer<Data>::InsertSome(const TraversableContainer<Data> & co
 
   container.Traverse(
     [this, &some_inserted](const Data& val){
-        some_inserted = some_inserted || (*this).Insert(val);
+        some_inserted |= Insert(val);
         }
     ); 
   return some_inserted;
@@ -58,12 +59,12 @@ bool DictionaryContainer<Data>::InsertSome(const TraversableContainer<Data> & co
 
 //InsertSome move of the value
 template <typename Data>
-bool DictionaryContainer<Data>::InsertSome(TraversableContainer<Data> && container){
+bool DictionaryContainer<Data>::InsertSome(MappableContainer<Data> && container){
   bool some_inserted = false;
 
   container.Traverse(
-    [this, &some_inserted](const Data& val){
-        some_inserted = some_inserted || (*this).Insert(std::move(val));
+    [this, &some_inserted](Data & val){
+        some_inserted |= Insert(std::move(val));
         }
     ); 
   return some_inserted;
@@ -76,7 +77,7 @@ bool DictionaryContainer<Data>::RemoveSome(const TraversableContainer<Data> & co
 
   container.Traverse(
     [this, &some_removed](const Data& val){
-        some_removed = some_removed || (*this).Remove(val);
+        some_removed |= Remove(val);
         }
     ); 
   return some_removed;
