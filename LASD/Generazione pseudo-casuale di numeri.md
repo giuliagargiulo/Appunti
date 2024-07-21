@@ -9,5 +9,5 @@ for(uint i=0; i<15; i++){
 }
 ```
  - `<type>`= int, uint, long,...
- - dist: distribuzione uniforme
+ - `dist`: distribuzione uniforme
  - $(i,j)$: range di valori.

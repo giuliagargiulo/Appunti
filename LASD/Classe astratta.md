@@ -1,0 +1,28 @@
+#### Classe astratta
+Una classe astratta è una classe "stampino" per le classi che ne derivano, ma non può essere istanziata, cioè non avremo mai oggetti di quella classe.
+In C++ una classe diventa astratta quando è presente almeno una ***funzione virtuale pura***.
+
+>[!Nota]
+>A differenza di Java, in C++ non esiste il concetto di interfaccia.
+>
+
+Una ***funzione virtuale pura*** è una funzione che non ha un'implementazione (infatti è inizializzata =0) e deve essere ridefinita da una classe derivata. Una classe derivata da una classe astratta deve implementare tutte le funzioni virtuali pure della classe base, ammenochè non vengano specificate come **delete**.
+
+```cpp
+class A{
+	public:
+		virtual void Print() = 0; // funzione virtuale pura
+		virtual void f() = 0;     // funzione virtuale pura
+};
+
+class B : virtual A{
+	public:
+		void Print() override;
+		void f() = delete; 
+};
+```
+
+>[!important]
+>Lo specificatore ***delete*** serve a eliminare un metodo ereditato da una classe base. E' utile quando si vuole impedire che una classe derivata erediti un metodo della classe base.
+
+---

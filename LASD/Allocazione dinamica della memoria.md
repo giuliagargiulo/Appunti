@@ -1,6 +1,7 @@
 ---
 Data: 14/03/2024
 ---
+In C e C++ la gestione della memoria è compito del programmatore.
 Per allocare e deallocare dinamicamente la memoria in `C++` si utilizzano rispettivamente gli operatori:
 - `new`, che corrisponde alla funzione`malloc()`del linguaggio `C`;
 - `delete`, che corrisponde alla funzione `free()` del linguaggio `C`.

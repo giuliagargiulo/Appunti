@@ -69,6 +69,7 @@ cout<<d;  // stampa 8
 >[!warning] 
 > ```cpp
 > uint &e = 1; // ERRORE!
+> const uint &e = 1  // Corretto!
 >```
 #### Puntatore:
 ```cpp
@@ -87,8 +88,22 @@ cout<<d;  // stampa 7
 
 ### Riferimento temporaneo
 
- Un riferimento temporaneo viene distrutto appena una chiamata a funzione distrugge quell'area di memoria.
+ I riferimenti temporanei, anche detti ***riferimenti a rvalue***, sono sinonimi di un'espressione temporanea che può essere salvata all'interno di un lvalue. Sono collegati esclusivamente ad oggetti temporanei. Vengono dichiarati tramite doppia e commerciale: `&&`.
+ Un riferimento temporaneo, viene distrutto appena una chiamata a funzione distrugge quell'area di memoria.
 `type && varname = ...`
+
+```c++
+std:: string getName(){ return "Alex";}
+int main(){
+	string && name = getName();
+	const string && name = getName();
+}
+```
+
+>[!Important]
+>I riferimenti a rvalue possono essere utilizzati per implementare letture distruttive per l'ottimizzazione di ciò che richiederebbe una copia.
+
+Grazie ai riferimenti a rvalue è possibile implementare l'operatore di spostamento, il quale non fa altro che fornire un riferimento all'oggetto temporaneo ed evitare che questo venga perduto o copiato: `move(x)`che sta per `static_cast<type&&>(x)`, dove `type` è il tipo di x.
 
 ---
 ## Oggetti

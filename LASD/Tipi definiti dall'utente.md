@@ -2,8 +2,7 @@
 author:
 ---
 ## Struct
-
-Le struct sono classi con accesso pubblico agli attributi e alle funzioni
+Le struct sono classi con accesso pubblico agli attributi e alle funzioni membro.
 
 ```cpp
 struct StructName{
@@ -23,7 +22,7 @@ struct Studente{
 
 L'accesso ai campi di una struct avviene tramite:
 1. la notazione puntata, ad esempio `StructNameVar.Campo`,
-2. tramite l'operatore `->`se si tratta di un puntatore ad una struttura: `PointerVarName -> Campo`, che corrisponde a `(*PointerVarName).Campo`.
+2. tramite l'operatore `->`se si tratta di un puntatore ad una struttura: `PointerVarName -> Campo`, che corrisponde a `(*PointerVarName).Campo`
 
 Per dichiarare una nuova variabile di tipo Studente posso usare:
 ```cpp
@@ -38,6 +37,7 @@ var1->Nome = string('Giulia'); // accesso tramite operatore freccia
 ---
 ## Enumerazione
 
+In C++ esistono due tipi di enumerazioni, le enumerazioni alla C, e le ***classi enum*** alla C++. 
 ```cpp
 enum class Name{elemento0,..., elementoN}; //enumerazione alla C++
 enum Name{...}  // enumerazione alla C
@@ -46,6 +46,8 @@ enum Name{...}  // enumerazione alla C
 Nome :: elementoi
 ```
 
+Nelle enumerazioni alla C ogni elemento viene codificato con un intero, a partire da 0.
+Nelle classi enum, invece, i nomi degli enumeratori sono **locali** e i loro valori non si convertono implicitamente ad altri tipi.
 
 ```cpp 
 enum class Color{white, gray, black};
@@ -69,5 +71,4 @@ colore == Color :: white   // FALSO, restituisce 0
 ```
 
 - Le variabili enumerative possono avere un valore iniziale di default.
-
 ---

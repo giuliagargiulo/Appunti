@@ -1,3 +1,4 @@
+Un grafo è una struttura dati rappresentato da una coppia ordinata $G = (V, E)$, dove $V$ è l'insieme dei ***vertici*** ed $E$ è l'insieme degli archi del grafo $G$.
 La libreria `<iostream>` può essere inclusa in un file tramite:
 ```cpp
 #include <iostream>

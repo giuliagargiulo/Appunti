@@ -1,6 +1,22 @@
-Un template permette di scrivere codice generico, cioè codice che funziona con diversi [[Tipi Fondamentali|tipi]] di dati (char, int, float, double,...), senza doverlo riscrivere ogni volta per ogni tipo.
+Un template permette di scrivere codice generico, cioè codice che funziona con diversi valori o [[Tipi Fondamentali|tipi]] di dati (char, int, float, double,...), senza doverlo riscrivere ogni volta per ogni tipo.
 
-Ad esempio, creiamo un template Data ed un vettore di tipo generico "Data":
+#### Classi template ( non so bene cosa sono)
+Per dichiarare una classe template si utilizza la seguente sintassi:
+```cpp
+template <class T>
+```
+
+Questa dichiarazione indica al compilatore che la dichiarazione successiva utilizzerà un generico tipo T che sarà noto solo quando il codice verrà effettivamente utilizzato.
+Una classe template non è ne un tipo, ne una classe, ne un oggetto.
+
+---
+#### Definire un template
+Attraverso la keyword ***typename*** si indica al compilatore che l'identificatore che segue deve essere trattato come un ***nome di tipo***.
+
+>[!Warning]
+> La keyword typename non ha lo stesso effetto di typedef, in quanto quest'ultima crea un alias per un tipo di dato già esistente.
+
+Creiamo un template Data ed un vettore di tipo generico "Data":
 ###### Vector.cpp
 ```cpp
 template <typename Data>
@@ -41,5 +57,51 @@ int main(){
 	cout << vec[0];
 	return 0;
 }
+```
+---
+#### Funzioni template
+Utilizzando i template è possibile definire funzioni generiche che possono funzionare con tipi di dato diversi. Una funzione di questo tipo viene definita con la seguente sintassi:
+```cpp
+template <typename Data>
+Data functionName (Data parameter1, Data parameter1,...){
+	// corpo della funzione
+}
+
+// Per richiamarla
+functionName<dataType>(parameter1, parameter2,...);
+```
+
+Ad esempio, consideriamo una funzione che esegue la somma di due variabili:
+```cpp
+template <typename Data>
+Data add(Data num1, Data num2){
+	return num1 + num2;
+}
+
+int main(){
+	int result1;
+	double result2;
+
+	result1 = add<int>(2, 3);
+	result2 = add<double>(2.3, 5.6);
+}
+```
+
+>[!Important]
+>Il compilatore genera automaticamente una versione della funzione per ogni tipo di dato con cui viene chiamata.
+
+Le funzioni template possono avere anche più di un parametro diverso:
+```cpp
+template <typename T1, typename T2>
+T1 max(T1 num1, T2 num2){
+	return (num1 > num2) ? num1 : num2;
+}
+
+// Quando chiamiamo la funzione dobbiamo specificare anche il tipo di ritorno
+int result1;
+double result2;
+
+result1 = max<int,double>(2, 3.4);
+result2 = max<double,int>(2.5, 7);
 ```
 ---

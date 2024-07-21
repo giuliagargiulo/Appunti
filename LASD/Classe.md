@@ -15,45 +15,114 @@ class ClassName{
 		... // attributi e metodi visibili a tutti.
 };
 ```
-##### Costruttori e distruttore
+
+---
+#### Specificatori di accesso
+
+Gli specificatori di accesso sono parole chiave che definiscono i livelli di accesso ai membri di una classe; servono a definire uno dei principali aspetti della programmazione ad oggetti, ***l'incapsulamento***, che consiste nel nascondere l'implementazione di un oggetto e mostrarne solo le funzionalità. In C++ ci sono 3 specificatori di accesso:
+1. `public`: i membri di una classe sono accessibili da qualsiasi parte del programma, quindi possono accedervi tutte le funzioni.
+2. `protected`: i membri di una classe sono accessibili solo dalle classi derivate.
+3. `private`: i membri di una classe non possono essere acceduti al di fuori della classe; solo le funzioni membro della stessa classe e le funzioni ***amiche*** possono accedere ai membri privati.
+
+>[!important]
+>Di default, tutti i membri di una classe in C++ sono privati, quindi se non viene specificato, i membri delle classi sono considerati private.
+
+L'incapsulamento assicura un maggiore controllo sull'accesso ai membri di una classe; per accedere a membri privati è possibile definire funzioni pubbliche: ***getter*** e ***setter***.
+
+---
+#### Costruttori e distruttore
+
+Un costruttore in C++ è un metodo speciale che viene chiamato automaticamente quando viene creato un oggetto di una classe.
+Se un costruttore viene invocato senza argomenti si tratta di un ***costruttore di default***, che serve ad inizializzare il valore degli attributi di una classe ai valori di default.
+
+Oltre al costruttore di default, esistono i ***costruttori specifici***, che prendono in ingresso un certo numero di parametri per inizializzare gli attributi della classe. Tra i costruttori specifici troviamo anche:
+1. Il ***costruttore di copia***, che prende in ingresso un riferimento costante ad un oggetto della classe stessa; esso serve per ottenere un nuovo oggetto **copiando** un altro oggetto.
+2. Il ***costruttore di spostamento***, che prende in ingresso un riferimento di tipo rvalue ad un oggetto della classe stessa; esso effettua uno spostamento dei dati da un oggetto già esistente ad un nuovo oggetto che si sta creando. Non dovrebbe mai sollevare eccezioni.
+
+Se il programmatore non definisce un costruttore di copia, ci pensa il compilatore (si tratta di una copia bit a bit degli attributi), ma questo potrebbe generare problemi in memoria.
+
+***Regola dei 5***: se viene definito uno tra questi 5 elementi, è importante definirli tutti.
 ```cpp
 // Costruttori
-ClassName(); // default constructor
-ClassName(parameters); // specific constructor
-ClassName( const ClassName &) // copy constructor
-ClassName(ClassName &&) noexcept; // move constructor
+ClassName(); // Default constructor
+ClassName(parameters); // Specific constructor
+ClassName( const ClassName &) // Copy constructor
+ClassName(ClassName &&) noexcept; // Move constructor
 
 // Distrutture
 ~ClassName(); 
 ```
-##### Operatori
+
+Per creare un oggetto, si utilizza la parola chiave `new` seguita da una chiamata ad uno dei costruttori definiti per quella classe.
+Ad esempio:
 ```cpp
-bool operator == (const ClassName &) const noexcept; // confronto
-ClassName & operator = (const ClassName &);  // copy assignment
-ClassName & operator = (ClassName &&) noexcept; // move assignment
+ClassName var; // chiama il costruttore di default
+ClassName* ptr = new ClassName(); // puntatore all'oggetto appena creato.
 ```
 
-#### Definizione di classi e metodi(da rivedere)
-L'applicazione della parola chiave `virtual` ai metodi di una classe consente di condizionare l'esecuzione del codice secondo il tipo dell'istanza dell'oggetto a cui si fa riferimento.
 
+Un distruttore, invece, si occupa di distruggere l'oggetto, deallocando la memoria associata ad esso; è un metodo che non riceve parametri e non ha nessun tipo di ritorno.
+Ogni oggetto allocato dinamicamente ( con la parola chiave `new`) deve essere deallocato utillizzando la parola chiave `delete`.
+
+---
+#### Definizione di metodi
+
+La definizione dei metodi può essere eseguita dentro la dichiarazione della classe (file.hpp) oppure possiamo definire solo il prototipo e poi definire il metodo fuori dalla dichiarazione della classe (file.cpp).
+
+Prototipo (da dichiarare nel file.cpp):
 ```cpp
-class ClassName : [virtual][private/ protected / public] BaseClassName{
-};
-
-// Metodi
 [virtual] type NameFun(parameters)[const][noexcept][override][=assignment]
 // Pseudo assignment :=0 / = default / = delete
 ```
 
-Definizione concreta di un metodo:
+Definizione concreta di un metodo (nel file.cpp):
 ```cpp
 type ClassName::FunName(parameters)[specifers]{codice}
 ```
 
-### Classe astratta
-Una classe astratta è una classe "stampino" per le classi che ne derivano, ma non possiamo utilizzarla direttamente, cioè non avremo mai oggetti di quella classe.
-In C++ una classe diventa astratta quando aggiungo un metodo virtuale. Ogni classe che eredita da una classe virtuale deve fare l'override dei metodi virtuali.
+- L'applicazione della parola chiave **`virtual`** ai metodi di una classe consente di condizionare l'esecuzione del codice secondo il tipo dell'istanza dell'oggetto a cui si fa riferimento. Essa serve per dichiarare metodi astratti, che potranno poi essere **reimplementati** in una sottoclasse.
+- `const` indica che la funzione non modifica la struttura su cui agisce.
+- `override` indica la presenza di una **reimplementazione** di un metodo ereditato da una classe base.
+- `noexcept`indica che quella funzione non solleva nessuna eccezione.
 
+Gli assignment sono specifiche aggiuntive che è possibile fornire al compilatore:
+- `0` serve per indicare che la funzione è ***virtuale pura***, cioè non implementabile in quella classe, ma solo nelle sottoclassi.
+- `default`è utilizzabile solo per costruttori e distruttori; chiede al compilatore di costruire un costruttore o distruttore di default.
+- `delete` serve ad eliminare una funzione esistente ereditato.
 
-Note:
-Creare una gerarchia senza virtual corrisponde alla visita in post order di un grafo senza colorazione, che quindi costa esponenziale, mentre 
+##### Overloading degli operatori
+Il C++ permette l'overloading degli operatori di confronto e assegnamento:
+```cpp
+bool operator == (const ClassName &) const noexcept; // Confronto
+ClassName & operator = (const ClassName &);  // Copy assignment
+ClassName & operator = (ClassName &&) noexcept; // Move assignment
+```
+
+##### Classi amiche 
+In C++ una classe può dichiarare un'altra classe come ***friend***, permettendole di accedere ai suoi membri ***private***. Questo metodo è utilizzato anche per effettuare l'overload degli operatori `ostream&` e `istream&`. 
+
+##### Funzioni inline
+
+Le funzioni inline sono funzioni che vengono sostituite al posto della chiamata a funzione ogni volta che vengono chiamate; questo permette di evitare l'overhead dovuto alla chiamata a funzione, che per funzioni molto piccole, costerebbe di più dell'esecuzione della funzione stessa. Per dichiarare una funzione inline basta anteporre la keyword `inline` alla dichiarazione della funzione:
+
+```cpp
+class ClassName{
+	public:
+		inline void print(){ cout << "Hello World" << endl; }
+};
+```
+
+---
+#### Parola chiave this
+La parola chiave this è un ***puntatore costante*** che punta all'oggetto corrente; essa è disponibile in tutti i metodi di una classe e viene utilizzata per far riferimento all'***oggetto corrente***. Si utilizza tramite l'operatore freccia:
+
+```cpp
+class ClassName{
+	private:
+		int x;
+	public:
+		void print(){ cout << this->x <<endl; }
+};
+```
+
+---

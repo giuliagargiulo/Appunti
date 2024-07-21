@@ -1,0 +1,40 @@
+In C++ è possibile definire ***funzioni anonime*** mediante l'uso di ***espressioni lambda***.
+Le espressioni lambda sono utilizzate per incapsulare alcune righe di codice passate ad algoritmi o funzioni asincrone o per implementare ***funzioni di callback*** in modo più semplice.
+
+>[!Nota]
+>Una funzione di callback è una funzione passata come parametro ad un'altra funzione.
+
+### Sintassi di base
+```cpp
+[/*clausola di cattura*/](/*lista parametri*/){ /*istruzioni*/ }
+```
+
+- La clausola di cattura contiene una lista di variabili passate per valore o per riferimento dal ***contesto*** di definizione dell'espressione lambda.
+```cpp
+[=] // cattura per valore
+[&] // cattura per riferimento
+[=, &var] // tutto per valore tranne var
+[&, var] // tutto per riferimento tranne var
+```
+- La lista di parametri è utilizzata tipicamente quando un'espressione lambda è usata come callback.
+- Il corpo delle istruzioni è composto dalla sequenza di istruzioni che manipolano i dati catturati dal contesto esterno o passate come parametro.
+- 
+E' possibile specificare anche il valore di ritorno:
+```cpp
+[num](const int& e)-> int { return e*num; };
+```
+
+---
+### Puntatori a funzione e espressioni lambda
+Le espressioni lambda possono essere utilizzate in sostituzione ai puntatori a funzione. Possono essere particolarmente utili quando si stanno implementando funzioni di libreria che richiedono funzioni di callback che non sono ancora state definite o che variano a seconda del contesto. In questo caso, quindi, con le espressioni lambda si può scrivere codice più conciso, evitando di dover definire una funzione da passare come parametro.
+
+Ad esempio:
+```cpp
+int main(){
+	int a, b;
+	cout<< "a+b"<< op(a, b, [](int n, int m)->int {return n + m; })<<endl;
+	cout<< "a*b"<< op(a, b, [](int n, int m)->int {return n * m; })<<endl;
+	cout<< "a-b"<< op(a, b, [](int n, int m)->int {return n - m; })<<endl;
+}
+```
+---

@@ -17,6 +17,14 @@ catch(...) // prende tutto quello non definito prima
 ```
 
 - Nel costruttore delle eccezioni (in questo caso someException) è buona norma inserire un messaggio d'errore.
+
+>[!important] 
+>Per definire una funzione che non solleva alcuna eccezione si utilizza `noexcept`:
+>```cpp
+>type nameFunction(parameters) noexcept;
+>```
+>Funzioni contetenti allocazioni di memoria, istruzioni di copia o che modificano la struttura dati potrebbero sollevare eccezioni, quindi non vanno dichiarate noexcept.
+
 ---
 #### Eccezioni della standard library
 Alcune eccezioni utili della libreria standard sono (dalla più generale alla più specifica):
@@ -69,12 +77,5 @@ catch (...) {
 	throw;
 }
 ```
-
->[!important] 
->Per definire una funzione che non solleva alcuna eccezione si utilizza `noexcept`:
->```cpp
->type nameFunction(parameters) noexcept;
->```
->Funzioni contetenti allocazioni di memoria, istruzioni di copia o che modificano la struttura dati potrebbero sollevare eccezioni, quindi non le dichiaro noexcept.
 
 ---
