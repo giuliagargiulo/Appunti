@@ -18,16 +18,6 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "b28c40ac64266c84",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "LASD/Immagini/Diamond problem.jpg"
-              }
-            }
           }
         ]
       }
@@ -160,36 +150,37 @@
   "active": "9f3e18d6036f632b",
   "lastOpenFiles": [
     "LASD/Tipi Fondamentali.md",
+    "LASD/Generazione pseudo-casuale di numeri.md",
+    "LASD/Ordinamento topologico.md",
+    "LASD/Grafo pesato.md",
+    "ASD/Immagini/IMG_7940A53640CE-1.jpeg",
+    "LASD/Grafo.md",
+    "ASD/Immagini/Pasted image 20231127100941.png",
+    "ASD/Alberi binari bilanciati.md",
+    "ASD/Ordinamento topologico.md",
+    "ASD/Grafo pesato.md",
+    "ASD/Grafo.md",
+    "ASD/Albero binario di ricerca.md",
+    "ASD/Albero binario.md",
+    "LASD/TO-DO.md",
+    "LASD/Immagini/Diamond problem.jpg",
     "LASD/Tipi definiti dall'utente.md",
     "LASD/Template.md",
     "LASD/Puntatori a funzione.md",
-    "LASD/Ordinamento topologico.md",
     "LASD/Libreria string.md",
     "LASD/Libreria iostream.md",
     "LASD/Introduzione a C++.md",
-    "LASD/Grafo pesato.md",
-    "LASD/Grafo.md",
-    "LASD/Generazione pseudo-casuale di numeri.md",
     "LASD/Espressioni Lambda.md",
     "LASD/Ereditarietà tra classi.md",
     "LASD/Eccezioni.md",
     "LASD/Allocazione dinamica della memoria.md",
     "LASD/Alcune Keywords.md",
-    "LASD/Immagini/Diamond problem.jpg",
     "LASD/Classe.md",
     "LASD/Immagini/Diamond problem 1.jpg",
     "LASD/Immagini",
-    "ASD/Albero binario.md",
-    "ASD/Albero binario di ricerca.md",
     "Albero binario.pdf",
     "LASD/Classe astratta.md",
-    "LASD/TO-DO.md",
-    "ASD/Grafo.md",
-    "ASD/Grafo pesato.md",
-    "[.md",
-    "ASD/Ordinamento topologico.md",
     "Untitled",
-    "ASD/Alberi binari bilanciati.md",
     "Albero binario di ricerca.pdf",
     "Librerie LASD/exercise3/bst/bst.hpp",
     "Librerie LASD/exercise3/bst/bst.cpp",
