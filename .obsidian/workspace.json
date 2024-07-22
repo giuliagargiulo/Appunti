@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LASD/TO-DO.md",
+                "file": "LASD/Allocazione dinamica della memoria.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "LASD/TO-DO.md",
+                "file": "LASD/Allocazione dinamica della memoria.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "LASD/TO-DO.md",
+                "file": "LASD/Allocazione dinamica della memoria.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "LASD/TO-DO.md"
+                "file": "LASD/Allocazione dinamica della memoria.md"
               }
             }
           }
@@ -149,8 +149,22 @@
   },
   "active": "9f3e18d6036f632b",
   "lastOpenFiles": [
-    "LASD/Tipi Fondamentali.md",
+    "LASD/Libreria iostream.md",
+    "LASD/Introduzione a C++.md",
     "LASD/Generazione pseudo-casuale di numeri.md",
+    "LASD/Espressioni Lambda.md",
+    "LASD/Ereditarietà tra classi.md",
+    "LASD/Eccezioni.md",
+    "LASD/Classe astratta.md",
+    "LASD/Classe.md",
+    "LASD/Alcune Keywords.md",
+    "LASD/Allocazione dinamica della memoria.md",
+    "ASD/Albero binario.md",
+    "ASD/Grafo pesato.md",
+    "ASD/Grafo.md",
+    "ASD.md",
+    "LASD/TO-DO.md",
+    "LASD/Tipi Fondamentali.md",
     "LASD/Ordinamento topologico.md",
     "LASD/Grafo pesato.md",
     "ASD/Immagini/IMG_7940A53640CE-1.jpeg",
@@ -158,28 +172,15 @@
     "ASD/Immagini/Pasted image 20231127100941.png",
     "ASD/Alberi binari bilanciati.md",
     "ASD/Ordinamento topologico.md",
-    "ASD/Grafo pesato.md",
-    "ASD/Grafo.md",
     "ASD/Albero binario di ricerca.md",
-    "ASD/Albero binario.md",
-    "LASD/TO-DO.md",
     "LASD/Immagini/Diamond problem.jpg",
     "LASD/Tipi definiti dall'utente.md",
     "LASD/Template.md",
     "LASD/Puntatori a funzione.md",
     "LASD/Libreria string.md",
-    "LASD/Libreria iostream.md",
-    "LASD/Introduzione a C++.md",
-    "LASD/Espressioni Lambda.md",
-    "LASD/Ereditarietà tra classi.md",
-    "LASD/Eccezioni.md",
-    "LASD/Allocazione dinamica della memoria.md",
-    "LASD/Alcune Keywords.md",
-    "LASD/Classe.md",
     "LASD/Immagini/Diamond problem 1.jpg",
     "LASD/Immagini",
     "Albero binario.pdf",
-    "LASD/Classe astratta.md",
     "Untitled",
     "Albero binario di ricerca.pdf",
     "Librerie LASD/exercise3/bst/bst.hpp",

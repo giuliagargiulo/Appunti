@@ -1,4 +1,4 @@
-Un ***grafo pesato*** è un [[ASD/Grafo]] $G =(V, E, w)$, dove  $w: E\rightarrow \mathbb{R}$ è una funzione che associa un numero reale chiamato peso ad ogni arco.
+Un ***grafo pesato*** è un [[ASD/Grafo|grafo]] $G =(V, E, w)$, dove  $w: E\rightarrow \mathbb{R}$ è una funzione che associa un numero reale chiamato peso ad ogni arco.
 Sia $π=v_1v_2\dots v_{k-1}v_k$ un [[Path|percorso]] in G, allora il peso di questo percorso è uguale a: $$w(π)=\sum_{i=1}^{k-1}\limits w(v_i,v_{i+1})$$
 
 Definiamo il peso del percorso minimo da $u$  a $v$: 

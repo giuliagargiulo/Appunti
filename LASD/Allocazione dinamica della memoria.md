@@ -6,7 +6,7 @@ Per allocare e deallocare dinamicamente la memoria in `C++` si utilizzano rispet
 - `new`, che corrisponde alla funzione`malloc()`del linguaggio `C`;
 - `delete`, che corrisponde alla funzione `free()` del linguaggio `C`.
 
-L'operatore `new` solleva un'eccezione, cioè `bad-alloc`, non sostituisce `nullptr` quando fallisce.
+Quando l'allocazione non ha avuto successo, l'operatore `new` solleva un'eccezione, cioè `bad-alloc`, non sostituisce `nullptr` quando fallisce (come in C) .
 
 >[!attention] 
 >1. L'uso degli operatori `new` e `delete` non va combinato con chiamate a funzione malloc, realloc e free.

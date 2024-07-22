@@ -85,7 +85,6 @@ def Postorder(T):
 >Visitare un albero richiede sempre memoria (stack).
 
 
-
 ### Visita in ampiezza
 
 Per effettuare una BFS su un albero binario abbiamo bisogno di una coda $Q$ in cui inserire i nodi del livello da visitare.
