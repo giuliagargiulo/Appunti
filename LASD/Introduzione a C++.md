@@ -55,7 +55,7 @@ void test(){
 
 ***test.hpp***
 ```cpp
-#ifundef TEST_HPP  //istruzioni del preprocessore
+#ifndef TEST_HPP  //istruzioni del preprocessore
 #define TEST_HPP
 void test();    // prototipo funzione test()
 #endif

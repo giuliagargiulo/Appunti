@@ -6,13 +6,14 @@
 - [x] virtual per le classi
 - [x] modificatori metodi (virtual, noexcept, const... )
 ##### Librerie:
-- [ ] QueueVec 
-- [ ] StackVec
-- [ ] BST
-- [ ] Iteratori
+- [x] QueueVec 
+- [x] StackVec
+- [x] BST
+- [x] Iteratori
 - [ ] HashTable
-- [ ] Liste
+- [x] Liste
 - [ ] QuickSort
+- [ ] iteratori online(quelli nelle librerie) o offline
 ##### Grafi:
 - [ ] Visita in Preorder e Postorder grafi
 - [ ] Iteratori sui grafi

@@ -1,0 +1,84 @@
+Una tabella Hash è una struttura dati che permette di memorizzare coppie di **chiave-valore** in modo efficiente, consentendo operazioni di **inserimento**, **ricerca** e **cancellazione** con una complessità media di $O(1)$. Sono spesso utilizzate per implementare dizionari o mappe.
+
+>[!Important]
+>Per implementare una tabella hash utilizzeremo un vettore.
+### Funzione di Hash
+
+Una **funzione di Hash** è una funzione che prende in input un **valore** e la trasforma in una **chiave**. Ad ogni chiave verrà associato poi un **indice**, che sarà l'indice della tabella Hash in cui inserire il **valore** associato alla **chiave**.
+
+In questo caso realizziamo una funzione di Hash per generare la chiave utilizzando il **metodo di moltiplicazione**, utilizzando la seguente formula:
+$$h(k) = kA - \lfloor kA\rfloor$$
+```cpp
+template<>
+class Hashable<int> {
+	public:
+		ulong operator()(const int val) const noexcept{
+			return (val+1)*val;	
+		}
+};
+
+template<>
+class Hashable<std::string> {
+	public:
+		ulong operator()(const std::string val) const noexcept{
+		ulong hashVal = 0;
+		for(ulong i = 0; i < val.size(); i++)
+			hashVal += (i* val[i]);
+		return hashVal;
+		}
+};
+
+template<>
+class Hashable<double> {
+	public:
+		ulong operator()(const double val) const noexcept{
+		ulong intPart = floor(val);
+		return ((intPart * intPart + ((val-intPart) * 
+		(val-intPart))) - intPart);
+	}
+};
+```
+
+Una volta ottenuta la chiave, applichiamo la funzione $HashKey$ per calcolare l'**indice** in cui inserire il valore.
+```cpp
+template <typename Data>
+ulong HashTable<Data>::HashKey(const ulong key) const noexcept{
+	return ((A * key + B) % tableSize);
+}
+```
+
+---
+### Gestione delle collisioni
+
+Poichè diverse chiavi possono avere lo stesso hash code, per gestire le **collisioni** si possono utilizzare due metodi:
+1. **Concatenazione**(Indirizzamento chiuso):  quando si verifica una collisione, viene creata una lista per aggiungere entrambi i valori allo stesso indice. La tabella Hash in questo caso viene implementata con un ***vettore di liste***.
+	- In questo caso bisogna tenere sotto controllo il fattore di carico $\alpha$, cioè il numero medio di elementi memorizzati in ogni lista ($\alpha =n/m$).
+	- Nel caso peggiore, tutte le $n$ chiavi corrispondono alla stessa posizione, creando una lista di lunghezza $n$, e la ricerca richiede $\Theta(n)$.
+
+2. **Indirizzamento aperto**: quando si verifica una collisione, si cerca un altro slot libero, seguendo una sequenza predeterminata (i metodi più utilizzati sono il probing lineare, probing quadratico o double hashing). La tabella Hash in questo caso è implementata mediante **due vettori**:
+	- un vettore che contiene i valori
+	- un vettore che contiene le **flag**: vuoto, cancellato, pieno.
+
+#### Probing lineare
+
+Nel probing lineare, se c'è una collisione, si cerca il prossimo slot libero muovendosi linearmente attraverso la tabella, incrementando l'indice di uno alla volta. Se si raggiunge la fine della tabella, si ricomincia dall'inizio, sfruttando il modulo.
+$$h(k,i) = (h(k) +i)\%tablesize$$
+ dove $tablesize$ è la dimensione della tabella e $i$ è il numero di tentativi effettuati.
+
+#### Probing quadratico
+Nel probing quadratico, se c'è una collisione, si cerca il prossimo slot libero spostandosi quadraticamente (il numero dei tentativi viene aumentato quadraticamente).
+$$h(k,i) = (h(k) +c_1 *i + c_2 * i^2)\%tablesize$$
+dove $tablesize$ è la dimensione della tabella e $i$ è il numero di tentativi effettuati e $c_1$,$c_2$ sono costanti.
+
+>[!warning]
+>Il probing quadratico è più difficile da implementare e richiede più tempo di calcolo, ma riduce il clustering primario.
+
+#### Double hashing
+
+Il double hashing utilizza due diverse funzioni di hash. Se c'è una collisione, si utilizza una seconda funzione di hash per determinare l'incremento da aggiungere all'indice iniziale.
+$$h(k,i)=(h1​(k)+i⋅h2​(k))\%teablesize$$
+dove $h1$ è la prima funzione di hash, $h2$ è la seconda, e non deve mai valere 0.
+Questo è uno dei metodi di probing più **efficienti**.
+
+---
+

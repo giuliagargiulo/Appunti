@@ -49,7 +49,7 @@ ClassName(parameters); // Specific constructor
 ClassName( const ClassName &) // Copy constructor
 ClassName(ClassName &&) noexcept; // Move constructor
 
-// Distrutture
+// Distruttore
 ~ClassName(); 
 ```
 
@@ -88,7 +88,7 @@ type ClassName::FunName(parameters)[specifers]{codice}
 Gli assignment sono specifiche aggiuntive che è possibile fornire al compilatore:
 - `0` serve per indicare che la funzione è ***virtuale pura***, cioè non implementabile in quella classe, ma solo nelle sottoclassi.
 - `default`è utilizzabile solo per costruttori e distruttori; chiede al compilatore di costruire un costruttore o distruttore di default.
-- `delete` serve ad eliminare una funzione esistente ereditato.
+- `delete` serve ad eliminare un metodo esistente ereditato.
 
 ##### Overloading degli operatori
 Il C++ permette l'overloading degli operatori di confronto e assegnamento:
