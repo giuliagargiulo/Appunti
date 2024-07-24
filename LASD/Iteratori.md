@@ -7,7 +7,7 @@ Le principali operazioni che un operatore può svolgere sono:
 
 ### Iteratori sugli alberi binari
 
-Per implementare degli iteratori sugli alberi binari abbiamo bisogno di tre elementi: **root** (radice dell'albero) , **current**(nodo corrente) e uno **stack**.
+Per implementare degli iteratori sugli alberi binari in preorder, postorder e inorder abbiamo bisogno di tre elementi: **root** (radice dell'albero) , **current**(nodo corrente) e uno **stack**.
 Gli iteratori simulano la ricorsione tramite l'utilizzo di uno **stack**, inserendo nello stack gli elementi da visitare successivamente. Se lo stack è vuoto e non ci sono altri figli, allora current viene impostato a **nullptr**, e di conseguenza l'iteratore termina.
 
 ```cpp
@@ -50,6 +50,36 @@ const typename BinaryTree<Data>::Node* BTPostOrderIterator<Data>::FindDeepestLef
 		}
 	}
 return node;
+}
+```
+
+
+Per implementare un iteratore su alberi binari che effettua una vista in ampiezza abbiamo invece bisogno di tre elementi: **root** (radice dell'albero) , **current**(nodo corrente) e una **coda**.
+La coda ci servirà per salvare i figli sinistro e destro del nodo che stiamo visitando, per visitarli successivamente, mantenendo l'ordine dei livelli.
+
+```cpp
+const typename BinaryTree<Data>::Node * root = nullptr;
+const typename BinaryTree<Data>::Node * current = nullptr;
+QueueVec<const typename BinaryTree<Data>::Node *> queue;
+```
+
+L'teratore parte dalla radice, quindi `current = root`, e procede per livelli, inserendo in coda i figli del nodo corrente; ogni volta che un nodo viene visitato, viene rimosso dalla coda. 
+Quando la coda è vuota (cioè non ci sono più sottoalberi da visitare), allora l'iteratore termina.
+
+```cpp
+template <typename Data>
+BTBreadthIterator<Data>& BTBreadthIterator<Data>::operator ++ (){
+	if(Terminated())
+		throw std::out_of_range("operator++: Iterator is terminated");
+	if(current->HasLeftChild())
+		queue.Enqueue(&current->LeftChild());
+	if(current->HasRightChild())
+		queue.Enqueue(&current->RightChild());
+	if(queue.Empty())
+		current = nullptr;
+	else
+		current = queue.HeadNDequeue();
+	return *this;
 }
 ```
 
