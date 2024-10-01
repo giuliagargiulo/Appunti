@@ -5,19 +5,20 @@
 - [x] public, protected e private (metodi)
 - [x] virtual per le classi
 - [x] modificatori metodi (virtual, noexcept, const... )
+- [ ] left value e rvalue
 ##### Librerie:
 - [x] QueueVec 
 - [x] StackVec
 - [x] BST
 - [x] Iteratori
-- [ ] HashTable
+- [x] HashTable
 - [x] Liste
 - [ ] QuickSort
-- [ ] iteratori online(quelli nelle librerie) o offline
+- [x] iteratori online(quelli nelle librerie) o offline
 ##### Grafi:
-- [ ] Visita in Preorder e Postorder grafi
+- [x] Visita in Preorder e Postorder grafi
 - [ ] Iteratori sui grafi
-- [ ] Tipi di grafi
+- [x] Tipi di grafi
 
 
 - [ ] Ripetizione generale di tutto

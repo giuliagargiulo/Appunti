@@ -1,6 +1,5 @@
 Un ***grafo pesato*** è un [[ASD/Grafo|grafo]] $G =(V, E, w)$, dove  $w: E\rightarrow \mathbb{R}$ è una funzione che associa un numero reale chiamato peso ad ogni arco.
-Sia $π=v_1v_2\dots v_{k-1}v_k$ un [[Path|percorso]] in G, allora il peso di questo percorso è uguale a: $$w(π)=\sum_{i=1}^{k-1}\limits w(v_i,v_{i+1})$$
-
+Sia $π=v_1v_2\dots v_{k-1}v_k$ un percorso in G, allora il peso di questo percorso è uguale a: $$w(π)=\sum_{i=1}^{k-1}\limits w(v_i,v_{i+1})$$
 Definiamo il peso del percorso minimo da $u$  a $v$: 
 $$\delta(u, v) = \begin{cases}\min \{w(p): u \rightarrow v\} & \text { se esiste un percorso da u a v}\\ \infty & \text { altrimenti }\end{cases} $$
 
@@ -9,7 +8,7 @@ Un percorso minimo da $u$ a $v$ è un qualsiasi percorso con peso $w(p)=\delta(u
 >[!important] 
 > L'obiettivo degli algoritmi seguenti è quello di, dato un grafo $G =(V, E, w)$, trovare il percorso minimo da un vertice sorgente $s\in V$ ad un qualsiasi vertice $v\in V$.
 
-###  Lemma 
+### Lemma 
 Dato un grafo pesato ed orientato $G =(V, E, w)$ e sia  $π=v_1v_{2\dots}v_{k-1}v_k$ un percorso minimo da $v_1$ a $v_k$ in G,  $\forall \ 1 \leq i  \leq j  \leq k$,  $π_{ij} =v_iv_{i+1}\dots v_j$ è il sotto-percorso  da $v_i$ a $v_j$. 
 Allora $π_{ij}$ è un percorso minimo da $v_i$ a $v_j$.
 

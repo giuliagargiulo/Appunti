@@ -8,43 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "9f3e18d6036f632b",
+            "id": "dddcfb039725a34e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ASD/Albero binario di ricerca.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "8ebe30c911aaf365",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "LASD/TO-DO.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "9a038411b6544a5e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "LASD/Iteratori.md",
+                "file": "SO/TO-DO.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -110,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "LASD/Iteratori.md",
+                "file": "SO/TO-DO.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -127,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "LASD/Iteratori.md",
+                "file": "SO/TO-DO.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "LASD/Iteratori.md"
+                "file": "SO/TO-DO.md"
               }
             }
           }
@@ -172,47 +147,51 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9a038411b6544a5e",
+  "active": "dddcfb039725a34e",
   "lastOpenFiles": [
-    "ASD/Albero binario.md",
-    "ASD/Albero binario di ricerca.md",
-    "LASD/Iteratori.md",
-    "LASD/Hash Table.md",
-    "LASD/Tipi definiti dall'utente.md",
-    "LASD/Tipi Fondamentali.md",
-    "LASD/Allocazione dinamica della memoria.md",
-    "LASD/Alcune Keywords.md",
-    "LASD/Template.md",
     "LASD/TO-DO.md",
-    "LASD/Introduzione a C++.md",
-    "LASD/Eccezioni.md",
-    "LASD/Ereditarietà tra classi.md",
-    "LASD/Classe.md",
-    "LASD/Libreria iostream.md",
-    "LASD/Generazione pseudo-casuale di numeri.md",
-    "LASD/Espressioni Lambda.md",
-    "LASD/Classe astratta.md",
-    "ASD/Grafo pesato.md",
-    "ASD/Grafo.md",
-    "ASD.md",
-    "LASD/Ordinamento topologico.md",
-    "LASD/Grafo pesato.md",
-    "ASD/Immagini/IMG_7940A53640CE-1.jpeg",
-    "LASD/Grafo.md",
-    "ASD/Immagini/Pasted image 20231127100941.png",
-    "ASD/Alberi binari bilanciati.md",
+    "LASD/Alcune Keywords.md",
+    "LASD/16. Hash Table.md",
+    "LASD/15. Iteratori.md",
+    "LASD/14. Eccezioni.md",
+    "LASD/13. Template.md",
+    "LASD/12. Espressioni Lambda.md",
+    "LASD/11. Puntatori a funzione.md",
+    "LASD/10. Ereditarietà tra classi.md",
+    "LASD/9. Classe astratta.md",
+    "LASD/8. Classe.md",
+    "LASD/7. Generazione pseudo-casuale di numeri.md",
+    "LASD/6. Libreria string.md",
+    "LASD/5. Libreria iostream.md",
+    "LASD/4. Allocazione dinamica della memoria.md",
+    "LASD/3. Tipi definiti dall'utente.md",
+    "LASD/2.Tipi Fondamentali.md",
+    "LASD/1. Introduzione a C++.md",
+    "Albero binario di ricerca.pdf",
+    "SO/Immagini/Screenshot 2024-09-02 alle 17.48.15.png",
+    "Untitled.canvas",
+    "Java.md",
+    "SO/Sistema operativo.md",
+    "SO/Immagini/Screenshot 2024-09-02 alle 17.35.10.png",
+    "SO/Immagini/Pasted image 20240901174442.png",
+    "SO/Immagini",
+    "SO/Immagini/Pasted image 20240901173229.png",
+    "SO/TO-DO.md",
+    "SO",
     "ASD/Ordinamento topologico.md",
+    "ASD/Grafo.md",
+    "ASD/Albero binario di ricerca.md",
+    "ASD/Alberi binari bilanciati.md",
+    "ASD/Immagini/IMG_7940A53640CE-1.jpeg",
+    "ASD/Immagini/Pasted image 20231127100941.png",
     "LASD/Immagini/Diamond problem.jpg",
     "LASD/Immagini/Diamond problem 1.jpg",
     "LASD/Immagini",
     "Albero binario.pdf",
-    "Untitled",
-    "Albero binario di ricerca.pdf",
     "Librerie LASD/exercise3/bst/bst.hpp",
     "Librerie LASD/exercise3/bst/bst.cpp",
     "Librerie LASD/exercise3/bst",
     "Librerie LASD/exercise3/exc2af.o",
-    "Librerie LASD/exercise3/main.cpp",
-    "Librerie LASD/exercise3/vector/vector.hpp"
+    "Librerie LASD/exercise3/main.cpp"
   ]
 }
