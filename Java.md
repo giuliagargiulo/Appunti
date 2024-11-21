@@ -28,3 +28,4 @@ boolean result = name.isEmpty(); // result = false
 String result = name.trim(); // rimuove gli spazi vuoti prima e dopo la stringa
 String result = name.replace('a','o'); // result = Giulio
 ```
+

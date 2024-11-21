@@ -8,18 +8,35 @@
         "type": "tabs",
         "children": [
           {
-            "id": "dddcfb039725a34e",
+            "id": "87cfdf66323bbee7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SO/TO-DO.md",
+                "file": "SO/10. Interfaccia del File System.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "10. Interfaccia del File System"
+            }
+          },
+          {
+            "id": "437086d3d6be938d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "LASD/Alcune Keywords.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "Alcune Keywords"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -39,7 +56,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -54,7 +73,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -62,14 +83,16 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 211.5
+    "width": 200
   },
   "right": {
     "id": "f43f52b47d9036db",
@@ -85,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "SO/TO-DO.md",
+                "file": "LASD/Alcune Keywords.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -93,7 +116,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Alcune Keywords"
             }
           },
           {
@@ -102,10 +127,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "SO/TO-DO.md",
+                "file": "LASD/Alcune Keywords.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Alcune Keywords"
             }
           },
           {
@@ -116,7 +143,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -125,12 +154,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "SO/TO-DO.md"
-              }
+                "file": "LASD/Alcune Keywords.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Alcune Keywords"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -147,10 +177,8 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "dddcfb039725a34e",
+  "active": "437086d3d6be938d",
   "lastOpenFiles": [
-    "LASD/TO-DO.md",
-    "LASD/Alcune Keywords.md",
     "LASD/16. Hash Table.md",
     "LASD/15. Iteratori.md",
     "LASD/14. Eccezioni.md",
@@ -167,31 +195,36 @@
     "LASD/3. Tipi definiti dall'utente.md",
     "LASD/2.Tipi Fondamentali.md",
     "LASD/1. Introduzione a C++.md",
-    "Albero binario di ricerca.pdf",
-    "SO/Immagini/Screenshot 2024-09-02 alle 17.48.15.png",
+    "SO/5. Sheduling della CPU.md",
+    "SO/4. Threads.md",
+    "SO/3. Processi.md",
+    "SO/2. Strutture dei Sistemi Operativi.md",
+    "SO/1. Sistema operativo.md",
+    "SO/11.  Realizzazione del file system.md",
+    "SO/Guida.md",
+    "SO/10. Interfaccia del File System.md",
+    "SO/Domande esame ottobre 2024.md",
+    "SO/12. Memoria di massa.md",
+    "SO/Immagini/Screenshot 2024-11-18 alle 12.28.19.png",
+    "PDF",
+    "SO/Immagini/Screenshot 2024-11-18 alle 12.26.11.png",
+    "SO/Immagini/Screenshot 2024-11-18 alle 12.26.00.png",
+    "SO/Immagini/Screenshot 2024-11-18 alle 12.15.14.png",
+    "SO/Immagini/Screenshot 2024-11-18 alle 12.03.16.png",
+    "SO/Immagini/Screenshot 2024-11-18 alle 12.02.31.png",
+    "SO/Immagini/Screenshot 2024-11-17 alle 12.16.39.png",
+    "PDF/Albero binario.pdf",
+    "PDF/Albero binario di ricerca.pdf",
+    "SO/Immagini/Screenshot 2024-11-12 alle 17.12.28.png",
+    "SO/Immagini/Screenshot 2024-11-12 alle 17.11.34.png",
+    "SO/Immagini/Screenshot 2024-11-12 alle 00.23.25.png",
+    "INGSW",
     "Untitled.canvas",
-    "Java.md",
-    "SO/Sistema operativo.md",
-    "SO/Immagini/Screenshot 2024-09-02 alle 17.35.10.png",
-    "SO/Immagini/Pasted image 20240901174442.png",
     "SO/Immagini",
-    "SO/Immagini/Pasted image 20240901173229.png",
-    "SO/TO-DO.md",
     "SO",
-    "ASD/Ordinamento topologico.md",
-    "ASD/Grafo.md",
-    "ASD/Albero binario di ricerca.md",
-    "ASD/Alberi binari bilanciati.md",
-    "ASD/Immagini/IMG_7940A53640CE-1.jpeg",
-    "ASD/Immagini/Pasted image 20231127100941.png",
-    "LASD/Immagini/Diamond problem.jpg",
-    "LASD/Immagini/Diamond problem 1.jpg",
     "LASD/Immagini",
-    "Albero binario.pdf",
     "Librerie LASD/exercise3/bst/bst.hpp",
     "Librerie LASD/exercise3/bst/bst.cpp",
-    "Librerie LASD/exercise3/bst",
-    "Librerie LASD/exercise3/exc2af.o",
-    "Librerie LASD/exercise3/main.cpp"
+    "Librerie LASD/exercise3/bst"
   ]
 }
