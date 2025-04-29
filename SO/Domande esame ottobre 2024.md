@@ -1,3 +1,6 @@
+---
+author: Giulia Gargiulo
+---
 ## 1. Come viene gestito un pagefault?
 Un **pagefault** è un'interruzione generata dalla CPU quando un processo cerca di accedere ad una pagina che non è presente in memoria (RAM); questo può accadere quando un processo accede per la prima volta ad una pagina, oppure quando la pagina è stata spostata sul disco per fare spazio ad altre pagine. Quando si verifica un pagefault, viene gestito nel seguente modo:
 1. **Interruzione e sospensione del processo**: la CPU sospende il processo che ha causato l'interruzione e invia un segnale al SO.

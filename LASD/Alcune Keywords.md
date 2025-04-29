@@ -1,3 +1,6 @@
+---
+author: Giulia Gargiulo
+---
 
 1. `inline` si usa quando il corpo di una funzione contiene soltanto una chiamata ad un'altra funzione; il compilatore, quindi, evita di compliare la funzione principale, e compila direttamente il suo corpo, ossia la chiamata a funzione; però non viene svolto sempre, è il compilatore a decidere.
 2. `friend` si utilizza quando si vuole dare l'accesso ad una classe o ad una funzione ai membri privati e protetti di una classe. Una funzione amica può essere una funzione globale o una funzione membro di un'altra classe.
